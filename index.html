@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 <head>
     <meta charset="UTF-8">
@@ -13,18 +13,19 @@
     <header class="top">
         <h1 class="maintitle">Top 20 Movies</h1>
     </header>
-    <form class="search">
-        <input type="text" class="search_title" placeholder="Please enter a search word">
-        <button>Enter</button>
+    <form id="form" class="search">
+        <input type="text" id="search_title" class="search_title" placeholder="Please enter a search word">
+        <button id="search_btn">Enter</button>
     </form>
 
     <div id="item" class="item_box">
-        <h4 class="original_title" ></h4>
+        <h4 class="original_title"></h4>
         <img class="poster_path">
-        <p class="vote_average"></p>
-        <div class="overview"></div>
+        <p class="overview"></p>
+        <h5 class="vote_average"></h5>
     </div>
 
     <script src="script.js"></script> <!-- 위의 JavaScript 코드가 있는 파일을 로드 -->
-  </body>
+</body>
+
 </html>
