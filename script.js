@@ -17,6 +17,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         const data = response.results
 
 
+
         // 1. 데이터가 들어갈 item이라는 이름을 가진 div 박스를 가져오기
         const newBox = document.getElementById('item')
 
@@ -29,22 +30,18 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
             // 반복되는 것을 확인했다면, 이제 태그를 만들어서 넣어주기만 하면 됨
             const itemBox = document.createElement('div')
             const poster_path = document.createElement('img');
-           
 
             itemBox.classList.add("item_box");
 
             itemBox.innerHTML = `
                 <h4>${ele.original_title}</h4>
-                <img src='https://image.tmdb.org/t/p/w500${ele.poster_path}'></img>
-                <p>평점: ${ele.vote_average}</p>
-                <div>${ele.overview}</div>`
+                <img src='https://image.tmdb.org/t/p/w500${ele.poster_path}' onclick="alert('id : ${ele.id}')"></img>
+                <p>${ele.overview}</p>
+                <h5>평점: ${ele.vote_average}</h5>`
 
             // 3️. 내가 가져온 newBox라는 div태그의 자식으로 itemBox를 넣어주면 끝
             newBox.appendChild(itemBox)
-
-
-
-
         })
     })
+
     .catch((err) => console.error(err))
